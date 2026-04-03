@@ -1,0 +1,75 @@
+---
+const promotions = [
+  {
+    badge: 'Offre du lundi',
+    icon: '🥖',
+    title: 'Duo baguettes tradition',
+    description: '2 baguettes tradition achetées pour le prix d\'une seule — chaque lundi toute la journée.',
+    price: '1,20 €',
+    originalPrice: '2,40 €',
+  },
+  {
+    badge: 'Week-end gourmand',
+    icon: '🥐',
+    title: 'Panier viennoiseries',
+    description: '6 viennoiseries au choix (croissants, pains au chocolat, brioches) à prix réduit chaque samedi matin.',
+    price: '7,50 €',
+    originalPrice: '10,80 €',
+  },
+  {
+    badge: 'Happy hour 18h–19h',
+    icon: '🍰',
+    title: 'Pâtisseries du jour',
+    description: 'Toutes les pâtisseries invendues à -30 % entre 18h et 19h30, du lundi au samedi.',
+    price: '-30 %',
+    originalPrice: null,
+  },
+];
+---
+
+<section id="promotions" class="bg-[#6B3F1E] py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- En-tête -->
+    <div class="text-center mb-14">
+      <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Offres exclusives</p>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl sm:text-4xl font-bold text-[#FEFCF8]">
+        Nos Promotions du Moment
+      </h2>
+      <div class="mt-4 mx-auto w-16 h-0.5 bg-[#C9A96E]"></div>
+    </div>
+
+    <!-- Grille de cartes -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {promotions.map(({ badge, icon, title, description, price, originalPrice }) => (
+        <div class="relative bg-[#FEFCF8] rounded-2xl shadow-lg p-8 overflow-hidden group hover:shadow-xl transition-shadow">
+          <!-- Badge -->
+          <span class="absolute top-4 right-4 bg-[#C9A96E] text-[#6B3F1E] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+            {badge}
+          </span>
+
+          <!-- Icône -->
+          <div class="text-5xl mb-5">{icon}</div>
+
+          <!-- Titre -->
+          <h3 style="font-family: 'Playfair Display', Georgia, serif;" class="text-xl font-semibold text-[#6B3F1E] mb-3 pr-16">
+            {title}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-[#8B5A2B] text-sm leading-relaxed mb-6">{description}</p>
+
+          <!-- Prix -->
+          <div class="flex items-baseline gap-3">
+            <span class="text-3xl font-bold text-[#C9A96E]">{price}</span>
+            {originalPrice && (
+              <span class="text-[#8B5A2B] text-sm line-through">{originalPrice}</span>
+            )}
+          </div>
+
+          <!-- Trait décoratif bas -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#C9A96E] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
