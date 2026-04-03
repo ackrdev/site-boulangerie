@@ -1,0 +1,55 @@
+---
+const specialties = [
+  {
+    icon: '🥖',
+    title: 'Pains Artisanaux',
+    description: 'Baguettes tradition, pain de campagne, seigle et pain aux noix — cuits au four à bois chaque matin dès 7h.',
+  },
+  {
+    icon: '🥐',
+    title: 'Viennoiseries',
+    description: 'Croissants pur beurre, pains au chocolat et brioches feuilletés à la main, croustillants à souhait.',
+  },
+  {
+    icon: '🍰',
+    title: 'Pâtisseries',
+    description: 'Tartes de saison, éclairs, mille-feuilles et entremets préparés selon l\'inspiration du chef.',
+  },
+];
+---
+
+<section id="specialites" class="bg-[#F5F0E8] py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- En-tête de section -->
+    <div class="text-center mb-14">
+      <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Fait maison chaque jour</p>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl sm:text-4xl font-bold text-[#6B3F1E]">
+        Nos Spécialités
+      </h2>
+      <div class="mt-4 mx-auto w-16 h-0.5 bg-[#C9A96E]"></div>
+    </div>
+
+    <!-- Grille de cartes -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {specialties.map(({ icon, title, description }) => (
+        <div class="bg-[#FEFCF8] rounded-2xl shadow-sm hover:shadow-md transition-shadow p-8 border-t-4 border-[#C9A96E]">
+          <div class="text-5xl mb-5">{icon}</div>
+          <h3 style="font-family: 'Playfair Display', Georgia, serif;" class="text-xl font-semibold text-[#6B3F1E] mb-3">
+            {title}
+          </h3>
+          <p class="text-[#8B5A2B] text-sm leading-relaxed">{description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA vers produits -->
+    <div class="text-center mt-12">
+      <a
+        href="/produits"
+        class="inline-block border-2 border-[#6B3F1E] text-[#6B3F1E] font-semibold px-8 py-3 rounded-lg hover:bg-[#6B3F1E] hover:text-[#FEFCF8] transition-colors"
+      >
+        Voir tous nos produits
+      </a>
+    </div>
+  </div>
+</section>

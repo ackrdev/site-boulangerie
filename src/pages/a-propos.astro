@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const timeline = [
+  {
+    year: '1985',
+    title: 'Les débuts',
+    text: 'Marcel Dupont ouvre la boulangerie au 12 rue des Fleurs. Le four à bois, héritage familial transmis par son propre père, est installé dès le premier jour.',
+  },
+  {
+    year: '1993',
+    title: 'L\'essor',
+    text: 'L\'atelier est agrandi pour accueillir une gamme complète de viennoiseries et pâtisseries. La clientèle fidèle du quartier récompense l\'investissement.',
+  },
+  {
+    year: '2003',
+    title: 'La transmission',
+    text: 'La seconde génération entre en scène : Pierre Dupont, fils de Marcel, rejoint son père après sa formation à l\'École Nationale Supérieure de la Boulangerie. La tradition se transmet.',
+  },
+  {
+    year: '2015',
+    title: 'La rénovation',
+    text: 'Rénovation complète de la boutique, dans le respect de l\'esprit artisanal originel. Le four à bois est restauré ; l\'âme du lieu est préservée.',
+  },
+  {
+    year: '2024',
+    title: 'Toujours là',
+    text: 'Boulangerie Dupont célèbre 39 ans de présence dans le quartier, toujours fidèle à ses recettes, à ses fournisseurs locaux et à ses clients de longue date.',
+  },
+];
+
+const values = [
+  {
+    icon: '🏆',
+    title: 'Tradition',
+    text: 'Des recettes transmises de génération en génération, jamais compromises pour la facilité industrielle.',
+  },
+  {
+    icon: '🌿',
+    title: 'Qualité',
+    text: 'Des ingrédients sélectionnés chez des producteurs locaux : farines label Rouge, beurre AOP, fruits de saison.',
+  },
+  {
+    icon: '🤝',
+    title: 'Proximité',
+    text: 'Une équipe à votre écoute, qui connaît vos préférences et qui fait du quartier un vrai lieu de vie.',
+  },
+];
+---
+
+<BaseLayout
+  title="À Propos"
+  description="L'histoire de la Boulangerie Dupont depuis 1985, famille artisane dans le 11e arrondissement de Paris. Deux générations, une passion."
+>
+  <!-- Hero -->
+  <section class="bg-[#6B3F1E] py-20 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Paris 11e depuis 1985</p>
+      <h1 style="font-family: 'Playfair Display', Georgia, serif;" class="text-4xl sm:text-5xl font-bold text-[#FEFCF8] mb-4">
+        Notre Histoire
+      </h1>
+      <p class="text-[#F5F0E8]/75 text-lg italic" style="font-family: 'Playfair Display', Georgia, serif;">
+        "Une famille, une passion, un quartier"
+      </p>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="bg-[#F5F0E8] py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-[#6B3F1E] text-lg leading-relaxed">
+        Depuis près de quatre décennies, la Boulangerie Dupont est bien plus qu'un simple commerce.
+        C'est un repère, un parfum de pain chaud le matin, un sourire familier derrière le comptoir.
+        Voici notre histoire — celle d'une famille qui a choisi de faire du bon pain son métier et sa vocation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="bg-[#FEFCF8] py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Depuis le premier jour</p>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl sm:text-4xl font-bold text-[#6B3F1E]">
+          39 ans d'histoire
+        </h2>
+        <div class="mt-4 mx-auto w-16 h-0.5 bg-[#C9A96E]"></div>
+      </div>
+
+      <!-- Timeline verticale -->
+      <div class="relative">
+        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-[#C9A96E]/40"></div>
+        <div class="space-y-12">
+          {timeline.map(({ year, title, text }) => (
+            <div class="relative pl-20">
+              <!-- Point sur la ligne -->
+              <div class="absolute left-6 top-1.5 w-4 h-4 rounded-full bg-[#C9A96E] ring-4 ring-[#FEFCF8]"></div>
+              <!-- Contenu -->
+              <div>
+                <span class="inline-block bg-[#C9A96E] text-[#6B3F1E] text-xs font-bold px-3 py-1 rounded-full mb-2">
+                  {year}
+                </span>
+                <h3 style="font-family: 'Playfair Display', Georgia, serif;" class="text-xl font-semibold text-[#6B3F1E] mb-2">
+                  {title}
+                </h3>
+                <p class="text-[#8B5A2B] text-sm leading-relaxed">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nos Valeurs -->
+  <section class="bg-[#F5F0E8] py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Ce qui nous guide</p>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl sm:text-4xl font-bold text-[#6B3F1E]">
+          Nos Valeurs
+        </h2>
+        <div class="mt-4 mx-auto w-16 h-0.5 bg-[#C9A96E]"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {values.map(({ icon, title, text }) => (
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-b-4 border-[#C9A96E]">
+            <div class="text-5xl mb-5">{icon}</div>
+            <h3 style="font-family: 'Playfair Display', Georgia, serif;" class="text-xl font-semibold text-[#6B3F1E] mb-3">
+              {title}
+            </h3>
+            <p class="text-[#8B5A2B] text-sm leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre équipe -->
+  <section class="bg-[#6B3F1E] py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <div class="text-5xl mb-6">👨‍🍳</div>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl font-bold text-[#FEFCF8] mb-6">
+        Notre Équipe
+      </h2>
+      <p class="text-[#F5F0E8]/80 text-lg leading-relaxed mb-8">
+        Notre équipe de cinq artisans boulangers commence le travail dès 4h du matin pour que chaque produit
+        soit frais à l'ouverture. Chacun apporte son savoir-faire et sa passion pour que votre petit-déjeuner
+        ou votre dessert soit à la hauteur de vos attentes.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block border-2 border-[#C9A96E] text-[#C9A96E] font-semibold px-8 py-3 rounded-lg hover:bg-[#C9A96E] hover:text-[#6B3F1E] transition-colors"
+      >
+        Venez nous rendre visite
+      </a>
+    </div>
+  </section>
+</BaseLayout>

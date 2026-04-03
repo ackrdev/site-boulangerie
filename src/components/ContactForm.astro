@@ -1,0 +1,75 @@
+---
+---
+
+<div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm">
+  <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-2xl font-bold text-[#6B3F1E] mb-2">
+    Nous écrire
+  </h2>
+  <p class="text-[#8B5A2B] text-sm mb-6">
+    Une question ? Une commande spéciale ? N'hésitez pas à nous contacter.
+  </p>
+
+  <!-- Remplacez YOUR_FORM_ID par votre identifiant Formspree -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div>
+        <label for="nom" class="block text-sm font-medium text-[#6B3F1E] mb-1.5">
+          Nom <span class="text-[#C9A96E]">*</span>
+        </label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          required
+          placeholder="Votre nom"
+          class="w-full border border-[#C9A96E]/30 rounded-lg px-4 py-3 bg-[#F5F0E8] text-[#6B3F1E] placeholder-[#8B5A2B]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A96E] focus:border-transparent"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-[#6B3F1E] mb-1.5">
+          E-mail <span class="text-[#C9A96E]">*</span>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="votre@email.fr"
+          class="w-full border border-[#C9A96E]/30 rounded-lg px-4 py-3 bg-[#F5F0E8] text-[#6B3F1E] placeholder-[#8B5A2B]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A96E] focus:border-transparent"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="sujet" class="block text-sm font-medium text-[#6B3F1E] mb-1.5">Sujet</label>
+      <input
+        type="text"
+        id="sujet"
+        name="sujet"
+        placeholder="Ex. : commande spéciale, renseignement..."
+        class="w-full border border-[#C9A96E]/30 rounded-lg px-4 py-3 bg-[#F5F0E8] text-[#6B3F1E] placeholder-[#8B5A2B]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A96E] focus:border-transparent"
+      />
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-[#6B3F1E] mb-1.5">
+        Message <span class="text-[#C9A96E]">*</span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows="5"
+        placeholder="Votre message..."
+        class="w-full border border-[#C9A96E]/30 rounded-lg px-4 py-3 bg-[#F5F0E8] text-[#6B3F1E] placeholder-[#8B5A2B]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A96E] focus:border-transparent resize-none"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-[#C9A96E] text-[#6B3F1E] font-semibold py-3 px-8 rounded-lg hover:bg-[#A8843A] transition-colors text-sm"
+    >
+      Envoyer le message
+    </button>
+  </form>
+</div>

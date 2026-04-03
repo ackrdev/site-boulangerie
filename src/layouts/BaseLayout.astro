@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Boulangerie Dupont",
+  "slogan": "Le bon pain de quartier depuis 1985",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12 rue des Fleurs",
+    "postalCode": "75011",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "telephone": "+33123456789",
+  "openingHours": ["Mo-Sa 07:00-19:30", "Su 07:00-13:00"],
+  "url": "https://boulangerie-dupont.fr"
+};
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <title>{title} | Boulangerie Dupont</title>
+    <link rel="canonical" href={Astro.url} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | Boulangerie Dupont`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content={Astro.url} />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

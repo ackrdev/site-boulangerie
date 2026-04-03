@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import MapEmbed from '../components/MapEmbed.astro';
+import HoursSection from '../components/HoursSection.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contactez la Boulangerie Dupont : 12 rue des Fleurs, 75011 Paris. Tél : 01 23 45 67 89. Lun–Sam 7h–19h30, Dim 7h–13h."
+>
+  <!-- Hero de page -->
+  <section class="bg-[#6B3F1E] py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Nous sommes à votre écoute</p>
+      <h1 style="font-family: 'Playfair Display', Georgia, serif;" class="text-4xl sm:text-5xl font-bold text-[#FEFCF8] mb-4">
+        Contact
+      </h1>
+      <p class="text-[#F5F0E8]/75 text-lg">
+        Une question, une commande spéciale ou simplement envie de nous dire bonjour ?
+      </p>
+    </div>
+  </section>
+
+  <!-- Infos rapides -->
+  <section class="bg-[#F5F0E8] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        <div class="bg-[#FEFCF8] rounded-xl p-6 shadow-sm">
+          <div class="text-3xl mb-3">📍</div>
+          <h3 class="font-semibold text-[#6B3F1E] mb-1">Adresse</h3>
+          <p class="text-[#8B5A2B] text-sm">12 rue des Fleurs<br />75011 Paris</p>
+        </div>
+        <div class="bg-[#FEFCF8] rounded-xl p-6 shadow-sm">
+          <div class="text-3xl mb-3">📞</div>
+          <h3 class="font-semibold text-[#6B3F1E] mb-1">Téléphone</h3>
+          <a href="tel:+33123456789" class="text-[#C9A96E] hover:text-[#A8843A] transition-colors text-sm font-medium">
+            01 23 45 67 89
+          </a>
+        </div>
+        <div class="bg-[#FEFCF8] rounded-xl p-6 shadow-sm">
+          <div class="text-3xl mb-3">🕐</div>
+          <h3 class="font-semibold text-[#6B3F1E] mb-1">Horaires</h3>
+          <p class="text-[#8B5A2B] text-sm">Lun–Sam 7h–19h30<br />Dim 7h–13h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire + Carte -->
+  <section class="bg-[#F5F0E8] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Formulaire -->
+        <div>
+          <ContactForm />
+        </div>
+
+        <!-- Carte + Horaires -->
+        <div class="space-y-8">
+          <div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-2xl font-bold text-[#6B3F1E] mb-4">
+              Nous trouver
+            </h2>
+            <MapEmbed />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horaires détaillés -->
+  <HoursSection variant="dark" />
+</BaseLayout>

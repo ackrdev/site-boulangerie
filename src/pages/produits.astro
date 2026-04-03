@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+const pains = [
+  { name: 'Baguette Tradition', price: '1,20 €', description: 'Notre incontournable, cuite deux fois par jour. Croûte dorée et mie alvéolée.', emoji: '🥖' },
+  { name: 'Pain de Campagne', price: '3,50 €', description: 'Mie dense et savoureuse, parfait pour accompagner fromages et charcuteries.', emoji: '🍞' },
+  { name: 'Pain au Seigle', price: '4,00 €', description: 'Riche en fibres, au goût légèrement acidulé. Idéal avec du saumon fumé.', emoji: '🌾' },
+  { name: 'Pain aux Noix', price: '4,50 €', description: 'Généreusement garni de noix de Grenoble, parfait pour le plateau de fromages.', emoji: '🥜' },
+  { name: 'Pain Complet', price: '3,20 €', description: 'À base de farine complète bio, pour un petit-déjeuner sain et nourrissant.', emoji: '🌿' },
+  { name: 'Pain aux Graines', price: '4,20 €', description: 'Mélange de graines de tournesol, sésame et lin pour une texture croquante.', emoji: '🫘' },
+];
+
+const viennoiseries = [
+  { name: 'Croissant Pur Beurre', price: '1,30 €', description: 'Feuilleté à la main avec du beurre AOP Charentes-Poitou. Croustillant dehors, fondant dedans.', emoji: '🥐' },
+  { name: 'Pain au Chocolat', price: '1,40 €', description: 'Pâte feuilletée dorée, garni de deux bâtonnets de chocolat noir 64%.', emoji: '🍫' },
+  { name: 'Brioche Individuelle', price: '1,80 €', description: 'Moelleuse et parfumée à la fleur d\'oranger, dorée à l\'œuf.', emoji: '🧁' },
+  { name: 'Chausson aux Pommes', price: '1,60 €', description: 'Compotée de pommes maison en pâte feuilletée croustillante et sucrée.', emoji: '🍎' },
+  { name: 'Pain aux Raisins', price: '1,50 €', description: 'Spirale de pâte briochée garnie de crème pâtissière et de raisins secs moelleux.', emoji: '🍇' },
+];
+
+const patisseries = [
+  { name: 'Éclair au Chocolat', price: '3,20 €', description: 'Pâte à choux légère, crème pâtissière onctueuse, fondant brillant au chocolat.', emoji: '🎂' },
+  { name: 'Mille-feuille', price: '4,00 €', description: 'Feuilleté caramélisé, crème mousseline à la vanille Bourbon, nappage royal.', emoji: '🍰' },
+  { name: 'Tarte aux Fraises', price: '4,50 €', description: 'Pâte sucrée sablée, crème d\'amande, fraises fraîches de saison sur lit de crème.', emoji: '🍓' },
+  { name: 'Paris-Brest', price: '3,80 €', description: 'Chou en couronne croustillant de pralin, fourré d\'une généreuse crème pralinée.', emoji: '🌰' },
+  { name: 'Opéra', price: '4,20 €', description: 'Biscuit joconde, crème au beurre café, ganache chocolat. Un classique de la pâtisserie française.', emoji: '☕' },
+];
+---
+
+<BaseLayout
+  title="Nos Produits"
+  description="Découvrez les pains, viennoiseries et pâtisseries artisanales de la Boulangerie Dupont à Paris 11e. Faits maison chaque matin."
+>
+  <!-- Hero de page -->
+  <section class="bg-[#6B3F1E] py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Fait maison chaque jour</p>
+      <h1 style="font-family: 'Playfair Display', Georgia, serif;" class="text-4xl sm:text-5xl font-bold text-[#FEFCF8] mb-4">
+        Nos Produits
+      </h1>
+      <p class="text-[#F5F0E8]/75 text-lg">
+        Sélectionnés avec soin, préparés avec passion dès 4h du matin.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section Pains -->
+  <section class="bg-[#F5F0E8] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-2">Cuits au four à bois</p>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl font-bold text-[#6B3F1E]">
+          Nos Pains
+        </h2>
+        <div class="mt-3 w-12 h-0.5 bg-[#C9A96E]"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {pains.map((produit) => <ProductCard {...produit} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Viennoiseries -->
+  <section class="bg-[#FEFCF8] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-2">Feuilletées à la main</p>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl font-bold text-[#6B3F1E]">
+          Viennoiseries
+        </h2>
+        <div class="mt-3 w-12 h-0.5 bg-[#C9A96E]"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {viennoiseries.map((produit) => <ProductCard {...produit} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pâtisseries -->
+  <section class="bg-[#F5F0E8] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-2">Selon l'inspiration du chef</p>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl font-bold text-[#6B3F1E]">
+          Pâtisseries
+        </h2>
+        <div class="mt-3 w-12 h-0.5 bg-[#C9A96E]"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {patisseries.map((produit) => <ProductCard {...produit} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Contact -->
+  <section class="bg-[#6B3F1E] py-14 text-center">
+    <div class="max-w-2xl mx-auto px-4">
+      <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-2xl font-bold text-[#FEFCF8] mb-3">
+        Commande spéciale ?
+      </h2>
+      <p class="text-[#F5F0E8]/75 mb-6 text-sm">
+        Pour une occasion particulière — anniversaire, mariage, événement — contactez-nous à l'avance.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-[#C9A96E] text-[#6B3F1E] font-semibold px-8 py-3 rounded-lg hover:bg-[#A8843A] transition-colors"
+      >
+        Nous contacter
+      </a>
+    </div>
+  </section>
+</BaseLayout>

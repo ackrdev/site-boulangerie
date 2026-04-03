@@ -1,0 +1,65 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#6B3F1E] text-[#FEFCF8]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Colonne 1 : Identité -->
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">🌾</span>
+          <span style="font-family: 'Playfair Display', Georgia, serif;" class="text-xl font-bold text-[#FEFCF8]">
+            Boulangerie Dupont
+          </span>
+        </div>
+        <p class="text-[#C9A96E] italic text-sm mb-2">"Le bon pain de quartier depuis 1985"</p>
+        <p class="text-[#FEFCF8]/70 text-sm">Artisans boulangers depuis 1985</p>
+      </div>
+
+      <!-- Colonne 2 : Contact -->
+      <div>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif;" class="text-lg font-semibold text-[#C9A96E] mb-4">
+          Nous trouver
+        </h3>
+        <address class="not-italic text-sm text-[#FEFCF8]/80 space-y-2">
+          <p>12 rue des Fleurs<br />75011 Paris</p>
+          <p>
+            <a href="tel:+33123456789" class="hover:text-[#C9A96E] transition-colors">
+              01 23 45 67 89
+            </a>
+          </p>
+          <p>
+            <a href="/contact" class="text-[#C9A96E] hover:text-[#A8843A] transition-colors underline underline-offset-2">
+              Voir sur la carte →
+            </a>
+          </p>
+        </address>
+      </div>
+
+      <!-- Colonne 3 : Horaires -->
+      <div>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif;" class="text-lg font-semibold text-[#C9A96E] mb-4">
+          Nos Horaires
+        </h3>
+        <dl class="text-sm text-[#FEFCF8]/80 space-y-2">
+          <div class="flex justify-between gap-4">
+            <dt>Lundi – Samedi</dt>
+            <dd class="text-[#FEFCF8]">7h00 – 19h30</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>Dimanche</dt>
+            <dd class="text-[#FEFCF8]">7h00 – 13h00</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Barre de bas de page -->
+    <div class="mt-10 pt-6 border-t border-[#8B5A2B] text-center">
+      <p class="text-[#C9A96E] text-sm">
+        &copy; {currentYear} Boulangerie Dupont — Tous droits réservés
+      </p>
+    </div>
+  </div>
+</footer>

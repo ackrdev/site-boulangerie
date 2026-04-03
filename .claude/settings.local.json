@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm create:*)",
+      "Bash(npx create-astro@latest --help)",
+      "Bash(npx astro@latest add tailwind --help)",
+      "Bash(npm show:*)",
+      "Bash(npx astro:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

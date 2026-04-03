@@ -1,0 +1,60 @@
+---
+const reviews = [
+  {
+    text: "Le meilleur pain du 11e arrondissement, sans hésitation ! La baguette tradition est parfaite chaque matin.",
+    author: "Marie L.",
+    since: "Cliente depuis 2010",
+    stars: 5,
+  },
+  {
+    text: "Les croissants sont exceptionnels, feuilletés et croustillants à souhait. On sent le vrai travail artisanal.",
+    author: "Jean-Pierre M.",
+    since: "Client fidèle",
+    stars: 5,
+  },
+  {
+    text: "Une vraie boulangerie de quartier avec beaucoup d'âme. L'équipe est toujours souriante. On y revient toujours !",
+    author: "Sophie R.",
+    since: "Habitante du quartier",
+    stars: 5,
+  },
+];
+---
+
+<section class="bg-[#F5F0E8] py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- En-tête -->
+    <div class="text-center mb-14">
+      <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Ils nous font confiance</p>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif;" class="text-3xl sm:text-4xl font-bold text-[#6B3F1E]">
+        Ce que disent nos clients
+      </h2>
+      <div class="mt-4 mx-auto w-16 h-0.5 bg-[#C9A96E]"></div>
+    </div>
+
+    <!-- Cartes avis -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {reviews.map(({ text, author, since, stars }) => (
+        <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm relative">
+          <!-- Guillemet décoratif -->
+          <span style="font-family: 'Playfair Display', Georgia, serif;" class="text-6xl text-[#C9A96E] leading-none block -mb-2">
+            "
+          </span>
+          <!-- Étoiles -->
+          <div class="flex gap-0.5 mb-4">
+            {Array.from({ length: stars }).map(() => (
+              <span class="text-[#C9A96E] text-lg">★</span>
+            ))}
+          </div>
+          <!-- Texte -->
+          <p class="text-[#8B5A2B] text-sm leading-relaxed italic mb-6">{text}</p>
+          <!-- Auteur -->
+          <div class="border-t border-[#C9A96E]/20 pt-4">
+            <p class="text-[#6B3F1E] font-semibold text-sm">{author}</p>
+            <p class="text-[#8B5A2B] text-xs">{since}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

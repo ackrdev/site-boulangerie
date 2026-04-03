@@ -1,0 +1,54 @@
+---
+interface Props {
+  variant?: 'dark' | 'light';
+}
+
+const { variant = 'dark' } = Astro.props;
+
+const isDark = variant === 'dark';
+---
+
+<section class={`py-16 ${isDark ? 'bg-[#6B3F1E] text-[#FEFCF8]' : 'bg-[#F5F0E8] text-[#6B3F1E]'}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <!-- Horaires -->
+      <div>
+        <p class="text-[#C9A96E] text-xs tracking-widest uppercase font-medium mb-3">Ouvert toute la semaine</p>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif;" class={`text-3xl sm:text-4xl font-bold mb-8 ${isDark ? 'text-[#FEFCF8]' : 'text-[#6B3F1E]'}`}>
+          Nos Horaires
+        </h2>
+        <dl class="space-y-4">
+          <div class={`flex justify-between items-center py-3 border-b ${isDark ? 'border-[#8B5A2B]' : 'border-[#C9A96E]/30'}`}>
+            <dt class={`font-medium ${isDark ? 'text-[#F5F0E8]' : 'text-[#6B3F1E]'}`}>Lundi – Samedi</dt>
+            <dd class="text-[#C9A96E] font-semibold">7h00 – 19h30</dd>
+          </div>
+          <div class={`flex justify-between items-center py-3 border-b ${isDark ? 'border-[#8B5A2B]' : 'border-[#C9A96E]/30'}`}>
+            <dt class={`font-medium ${isDark ? 'text-[#F5F0E8]' : 'text-[#6B3F1E]'}`}>Dimanche</dt>
+            <dd class="text-[#C9A96E] font-semibold">7h00 – 13h00</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Adresse et CTA -->
+      <div class={`rounded-2xl p-8 ${isDark ? 'bg-white/10' : 'bg-[#FEFCF8] shadow-sm border border-[#C9A96E]/20'}`}>
+        <div class="text-3xl mb-4">📍</div>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif;" class={`text-xl font-semibold mb-3 ${isDark ? 'text-[#FEFCF8]' : 'text-[#6B3F1E]'}`}>
+          Boulangerie Dupont
+        </h3>
+        <address class={`not-italic text-sm mb-5 leading-relaxed ${isDark ? 'text-[#F5F0E8]/80' : 'text-[#8B5A2B]'}`}>
+          12 rue des Fleurs<br />
+          75011 Paris<br />
+          <a href="tel:+33123456789" class="text-[#C9A96E] hover:text-[#A8843A] transition-colors">
+            01 23 45 67 89
+          </a>
+        </address>
+        <a
+          href="/contact"
+          class="inline-block bg-[#C9A96E] text-[#6B3F1E] font-semibold px-6 py-3 rounded-lg hover:bg-[#A8843A] transition-colors text-sm"
+        >
+          Nous trouver sur la carte →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

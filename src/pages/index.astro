@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import SpecialtiesSection from '../components/SpecialtiesSection.astro';
+import HoursSection from '../components/HoursSection.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
+---
+
+<BaseLayout
+  title="Accueil"
+  description="Boulangerie artisanale à Paris 11e. Pain tradition, viennoiseries et pâtisseries faits maison depuis 1985. 12 rue des Fleurs, ouvert Lun–Sam 7h–19h30."
+>
+  <HeroSection />
+  <SpecialtiesSection />
+  <HoursSection variant="dark" />
+  <ReviewsSection />
+</BaseLayout>
